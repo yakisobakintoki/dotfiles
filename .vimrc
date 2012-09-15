@@ -10,6 +10,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'fuenor/qfixgrep'
+Bundle 'Shougo/neocomplcache'
 "---- font solarized
 
 if has('gui_running')
@@ -21,7 +22,10 @@ if has('gui_running')
 " set guifontwide=Ricty\ 14
  set ambiwidth=double
 else
+ syntax enable
 endif
+
+let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
 
 "新しい行のインデントを現在行と同じにする
 set autoindent
