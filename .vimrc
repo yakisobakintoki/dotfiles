@@ -35,7 +35,7 @@ cnoremap <silent> fu :<C-u>Unite file_mru buffer<CR>
 
 
 "---- font solarized
-"-----------------------------------------------------------------------------
+"--------------------------------------------------------------------------
 
 syntax enable
 if has('gui_running')
@@ -168,9 +168,8 @@ inoremap <C-y>fda	<C-R>=strftime('%Y/%m/%d (%a)')<CR>
 cnoremap <C-y>fda	<C-R>=strftime('%Y/%m/%d (%a)')<CR>
 nnoremap <C-y>h1	77i=<ESC><S-O>■
 nnoremap <C-y>h2	77i-<ESC><S-O>●
-inoremap <C-y>h1	<ESC>77i=<ESC><S-O>■
-inoremap <C-y>h2	<ESC>77i-<ESC><S-O>●
-
+inoremap <C-y>h1	<ESC>75i=<ESC><S-O>■
+inoremap <C-y>h2	<ESC>75i-<ESC><S-O>●
 "aefb"
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
