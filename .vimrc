@@ -20,6 +20,16 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'astashov/vim-ruby-debugger'
 
 
+
+"---- Gtags
+"-----------------------------------------------------------------------------
+nnoremap g' :GtagsCursor<CR>
+nnoremap g't :Gtags 
+nnoremap g'f :Gtags -f %<CR>
+nnoremap g'n :cn<CR>
+nnoremap g'p :cp<CR>
+
+
 "---- Unite
 "-----------------------------------------------------------------------------
 let g:unite_enable_start_insert=1
