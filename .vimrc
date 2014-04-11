@@ -23,7 +23,7 @@ Bundle 'astashov/vim-ruby-debugger'
 
 "---- Gtags
 "-----------------------------------------------------------------------------
-nnoremap g' :GtagsCursor<CR>
+nnoremap g'c :GtagsCursor<CR>
 nnoremap g't :Gtags 
 nnoremap g'f :Gtags -f %<CR>
 nnoremap g'n :cn<CR>
@@ -35,7 +35,7 @@ nnoremap g'p :cp<CR>
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
 let g:unite_source_file_mru_limit = 200
-let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_as_default_explorer = 0
 
 cnoremap <silent> fy :<C-u>Unite history/yank<CR>
 cnoremap <silent> fb :<C-u>Unite buffer<CR>
