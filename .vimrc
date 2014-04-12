@@ -35,13 +35,14 @@ nnoremap g'p :cp<CR>
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
 let g:unite_source_file_mru_limit = 200
-let g:vimfiler_as_default_explorer = 0
+let g:vimfiler_as_default_explorer = 1
 
-cnoremap <silent> fy :<C-u>Unite history/yank<CR>
-cnoremap <silent> fb :<C-u>Unite buffer<CR>
-cnoremap <silent> ff :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-cnoremap <silent> fr :<C-u>Unite -buffer-name=register register<CR>
-cnoremap <silent> fu :<C-u>Unite file_mru buffer<CR>
+nnoremap <silent> 'fy :Unite history/yank<CR>
+nnoremap <silent> 'fb :Unite buffer<CR>
+"nnoremap <silent> 'ff :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> 'ff :Unite file<CR>
+nnoremap <silent> 'fr :Unite -buffer-name=register register<CR>
+nnoremap <silent> 'fu :Unite file_mru buffer<CR>
 
 
 "---- font solarized
@@ -71,7 +72,7 @@ set backupdir=$HOME/vimbackup
 "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
 set browsedir=buffer 
 "クリップボードをWindowsと連携
-set clipboard=unnamed
+set clipboard+=unnamed
 "Vi互換をオフ
 set nocompatible
 "スワップファイル用のディレクトリ
@@ -119,7 +120,6 @@ set linebreak
 "全角スペースを視覚化
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
 au BufNewFile,BufRead * match ZenkakuSpace /　/
-set cursorline
 
 " カレントウィンドウにのみ罫線を引く
 augroup cch
@@ -145,16 +145,17 @@ set noexpandtab
 
 "--------- hotkey
 "-----------------------------------------------------------------------------
-source ~/wk/gen-inputrc/gen.inputrc.vimrc
+source ~/.ini/gen.inputrc.vimrc
 
 
-nnoremap <C-l> :
-vnoremap <C-l> <Esc>
-inoremap <C-l> <Esc>
-cnoremap <C-l> <Esc> 
-"nnoremap <C-k> :
-"vnoremap <C-k> <Esc> "inoremap <C-k> <Esc>
-"cnoremap <C-k> <Esc> 
+"nmap <C-l> :
+"vnoremap <C-l> <Esc>
+"inoremap <C-l> <Esc>
+"cnoremap <C-l> <Esc> 
+nnoremap <C-k> :
+vnoremap <C-k> <Esc>
+inoremap <C-k> <Esc>
+cnoremap <C-k> <Esc> 
 vnoremap <C-q> <Esc>
 inoremap <C-q> <ESC>
 cnoremap <C-q> <ESC>
@@ -200,6 +201,10 @@ inoremap <C-S-v> <ESC>pa<ESC>
 
 nmap <Tab> gt
 nmap <S-Tab> gT
+nmap <space>f gt
+nmap <space>s gT
+nnoremap <silent><Space>j    :Explore<CR>
+nnoremap <silent><Space>n    :tabe<CR>
 
 " gq テキスト整形
 
@@ -230,8 +235,10 @@ if has('gui_running')
     "set mousehide
 endif
 
-"set t_Co=16
+" ツールバーを削除　
+set guioptions-=T
 
+"set t_Co=16
 
 
 
